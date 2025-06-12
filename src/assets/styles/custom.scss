@@ -1,0 +1,22 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// Your custom color definitions
+$offcanvas-horizontal-width: 220px;
+$green: #38e078;
+$black: #0d1a12;
+$peach: #fdc696;
+$gray: #e8f2ed;
+$white: white;
+
+$custom-colors: (
+  "peach": $peach,
+  "gray": $gray,
+  "white": $white,
+  "black": $black,
+  "green": $green,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrap/scss/bootstrap";
