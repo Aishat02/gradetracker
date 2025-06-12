@@ -1,7 +1,7 @@
 import { useState } from "react";
 import logo from "/logo.svg";
 import { Eye, EyeOff } from "lucide-react";
-import { useForm, FieldErrors, RegisterOptions } from "react-hook-form";
+import { useForm, RegisterOptions } from "react-hook-form";
 
 // Define form data structure
 type FormData = {
@@ -35,19 +35,18 @@ const Form = () => {
     console.log("Form Submitted:", data);
   };
 
-  const InputField = ({
+  const InputField = <TField extends keyof FormData>({
     id,
     label,
     type = "text",
     placeholder,
     registerOptions,
   }: {
-    id: keyof FormData;
+id: TField;
     label: string;
     type?: string;
     placeholder: string;
-    registerOptions?: RegisterOptions;
-  }) => (
+    registerOptions?: RegisterOptions<FormData, TField>;  }) => (
     <div className="mb-3">
       <label htmlFor={id} className="fw-bold form-label">
         {label}
