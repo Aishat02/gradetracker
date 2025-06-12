@@ -1,4 +1,4 @@
-import React from "react";
+import {ReactNode} from "react";
 import {
   ChartLine,
   CloudUpload,
@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 type FeatureCardProps = {
-  icon: JSX.Element;
+  icon: ReactNode;
   title: string;
   description: string;
 };

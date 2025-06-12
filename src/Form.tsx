@@ -30,6 +30,11 @@ const Form = () => {
     setIsLogin(mode);
     reset();
   };
+
+  const response = (data: FormData): void => {
+    console.log("Form Submitted:", data);
+  };
+
   const InputField = ({
     id,
     label,
@@ -52,7 +57,7 @@ const Form = () => {
         id={id}
         placeholder={placeholder}
         className="form-control"
-        {...register(id, registerOptions)}
+        {...register(id, registerOptions ?? {})}
       />
       {errors[id] && (
         <span className="text-danger">{(errors[id] as any)?.message}</span>
@@ -96,7 +101,7 @@ const Form = () => {
   );
 
   return (
-    <form className="p-4 rounded bg-gray" onSubmit={handleSubmit()}>
+    <form className="p-4 rounded bg-gray" onSubmit={handleSubmit(response)}>
       <div className="d-flex justify-content-center mb-3">
         <img src={logo} alt="logo" width="30" height="24" />
         <strong className="ms-2">GradeTracker</strong>
