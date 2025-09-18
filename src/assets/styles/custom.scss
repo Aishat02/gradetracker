@@ -4,10 +4,14 @@
 // Your custom color definitions
 $offcanvas-horizontal-width: 220px;
 $green: #38e078;
-$black: #0d1a12;
+$black: #212529;
 $peach: #fdc696;
 $gray: #e8f2ed;
 $white: white;
+
+$list-group-active-bg: $green;
+$list-group-active-border-color: $green;
+$list-group-active-color: $black;
 
 $custom-colors: (
   "peach": $peach,
@@ -15,6 +19,7 @@ $custom-colors: (
   "white": $white,
   "black": $black,
   "green": $green,
+  "whitesmoke": whitesmoke,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);

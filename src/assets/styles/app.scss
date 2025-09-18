@@ -34,12 +34,47 @@ header img {
 .nav-link.active {
   border-bottom: 3px solid $green;
 }
-section.account {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
-}
-form {
+form.login,
+form.signup {
   max-width: 500px;
+  width: 420px;
+  margin: 2em auto;
+  box-shadow: 0 0px 5px gray;
+}
+caption {
+  font-size: 20px;
+}
+.nav-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.nav-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.dot {
+  height: 18px;
+  width: 18px;
+}
+.dot a {
+  white-space: nowrap;
+  color: black;
+  top: -2px;
+}
+.bar {
+  height: 18px;
+  width: 4px;
+}
+@media (min-width: 1024px) {
+  .dashboard-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  .dashboard-body {
+  margin-left: 30vw;
+}
+.sidebar {
+  position: fixed;
+  height: 100vh;
+}
 }
