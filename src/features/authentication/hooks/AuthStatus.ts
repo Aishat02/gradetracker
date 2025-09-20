@@ -2,14 +2,14 @@ import { auth } from "../utils/Firebase";
 import { useContext, useEffect } from "react";
 import { DataContext } from "@/shared/context/DataFlow";
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, User } from "firebase/auth";
 
 const AuthStatus = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(DataContext);
 
   useEffect(() => {
-    const status = onAuthStateChanged(auth, (user) => {
+    const status = onAuthStateChanged(auth, (user:User | null) => {
       if (!user) {
         navigate("/login");
       } else {
