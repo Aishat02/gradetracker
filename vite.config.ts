@@ -5,7 +5,7 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: ["f5tkr3-5173.csb.app"],
+    port: 3000,
   },
   resolve: {
     alias: {
