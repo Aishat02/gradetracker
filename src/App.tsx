@@ -7,7 +7,8 @@ import Login from "@/features/authentication/components/Login";
 import Dashboard from "@/dashboard/components/Dashboard";
 import SignUp from "@/features/authentication/components/SignUp";
 import DataFlow from "@/shared/context/DataFlow";
-import AuthStatus from "@/features/authentication/hooks/AuthStatus";
+import AuthStatus from "@/dashboard/components/AuthStatus";
+import PrivateRoute from "@/dashboard/components/PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import { JSX } from "react";
 
@@ -23,7 +24,14 @@ const App = (): JSX.Element => {
           <Routes>
             <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
         </QueryClientProvider>
