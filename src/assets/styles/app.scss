@@ -33,6 +33,10 @@ header img {
 }
 .nav-link.active {
   border-bottom: 3px solid $green;
+  margin-bottom: 10px;
+}
+.nav-link {
+  width: 30%;
 }
 form.login,
 form.signup {
@@ -65,16 +69,22 @@ caption {
   height: 18px;
   width: 4px;
 }
+
+@media (min-width: 768px) {
+  .nav-link {
+    width: 100%;
+  }
+}
 @media (min-width: 1024px) {
   .dashboard-container {
     position: relative;
     min-height: 100vh;
   }
   .dashboard-body {
-  margin-left: 30vw;
-}
-.sidebar {
-  position: fixed;
-  height: 100vh;
-}
+    margin-left: 30vw;
+  }
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+  }
 }

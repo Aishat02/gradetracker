@@ -39,10 +39,6 @@ const NavBar: React.FC = () => {
           aria-labelledby="offcanvasRightLabel"
         >
           <div className="offcanvas-header">
-            {/* <a className="navbar-brand d-flex align-items-center" href="/">
-              <img src={logo} alt="logo" width="30" height="24" />
-              GradeTracker
-            </a> */}
             <button
               type="button"
               className="btn-close"
@@ -89,7 +85,7 @@ const NavBar: React.FC = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link bg-green rounded" to="login">
+                <NavLink className="nav-link bg-gray rounded" to="login">
                   Login
                 </NavLink>
               </li>
