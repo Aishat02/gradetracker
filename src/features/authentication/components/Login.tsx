@@ -85,7 +85,7 @@ const Login = () => {
             />
             <Button
               type="button"
-              className= position-absolute end-0 top-50 translate-middle-y pe-3"
+              className="position-absolute end-0 top-50 translate-middle-y pe-3"
               onClick={togglePasswordVisibility}
               style={{ border: "none", background: "transparent", zIndex: 10 }}
               aria-label="Toggle password visibility"

@@ -28,7 +28,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center h-100 my-5">
+    <div className="d-flex justify-content-center align-items-center min-vh-100 my-5">
       <Form
         name="signup"
         className="p-4 rounded signup"
