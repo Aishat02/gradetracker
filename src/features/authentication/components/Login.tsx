@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../hooks/useAuth";
 import { PulseEffect } from "@/dashboard/components/MotionAnimations";
 import { AuthFormData } from "@/shared/types/user";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const Login = () => {
   const { useEmailLogin, useGoogle, useResetPassword } = useAuth();
@@ -31,8 +33,8 @@ const Login = () => {
   const userEmail: string = getValues("email");
 
   return (
-    <div className="d-flex justify-content-center align-items-center h-100">
-      <form
+    <div className="d-flex justify-content-center align-items-center h-100 ">
+      <Form
         className="p-4 rounded login"
         onSubmit={handleSubmit((data) => emailLogin.mutate(data))}
       >
@@ -48,15 +50,11 @@ const Login = () => {
 
         {loginError && <span className="text-danger">{loginError}</span>}
 
-        <div className="mb-3">
-          <label htmlFor="email" className="fw-bold form-label">
-            Email address
-          </label>
-          <input
-            id="email"
+        <Form.Group controlId="email" className="mb-3">
+          <Form.Label className="fw-bold">Email address</Form.Label>
+          <Form.Control
             type="email"
             placeholder="janedoe@gmail.com"
-            className="form-control"
             {...register("email", {
               required: "Email is required",
               pattern: {
@@ -68,17 +66,14 @@ const Login = () => {
           {errors.email && (
             <span className="text-danger">{errors.email.message}</span>
           )}
-        </div>
+        </Form.Group>
 
-        <div className="mb-3">
-          <label htmlFor="password" className="fw-bold form-label">
-            Password
-          </label>
+        <Form.Group className="mb-3" controlId="password">
+          <Form.Label className="fw-bold">Password</Form.Label>
           <div className="position-relative">
-            <input
+            <Form.Control
               type={showPassword ? "text" : "password"}
-              className="form-control pe-5"
-              id="password"
+              className="pe-5"
               {...register("password", {
                 required: "Password is required",
                 pattern: {
@@ -88,29 +83,29 @@ const Login = () => {
                 },
               })}
             />
-            <button
+            <Button
               type="button"
-              className="btn position-absolute end-0 top-50 translate-middle-y pe-3"
+              className= position-absolute end-0 top-50 translate-middle-y pe-3"
               onClick={togglePasswordVisibility}
               style={{ border: "none", background: "transparent", zIndex: 10 }}
               aria-label="Toggle password visibility"
             >
               {showPassword ? <EyeOff /> : <Eye />}
-            </button>
+            </Button>
           </div>
           {errors.password && (
             <span className="text-danger">{errors.password.message}</span>
           )}
-        </div>
+        </Form.Group>
 
-        <button
+        <Button
           type="button"
           className="border-0 text-primary"
           style={{ background: "transparent" }}
           onClick={() => resetPassword.mutate(userEmail)}
         >
           Forgot your password?
-        </button>
+        </Button>
         <div>
           <PulseEffect
             type="submit"
@@ -144,7 +139,7 @@ const Login = () => {
             Sign Up{" "}
           </Link>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };
