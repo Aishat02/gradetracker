@@ -27,14 +27,16 @@ const SignUp = () => {
   };
 
   return (
+        <div className="d-flex justify-content-center align-items-center h-100">
+    
     <Form
       name="signup"
       className="p-4 rounded signup"
       onSubmit={handleSubmit((data) => emailSignup.mutate(data))}
     >
-      <Link to="/" className="d-flex justify-content-center mb-3">
+      <Link to="/" className="d-flex justify-content-center mb-3 text-decoration-none">
         <img src={logo} alt="logo" width="30" height="24" />
-        <strong>GradeTracker</strong>
+        <strong className="text-dark">GradeTracker</strong>
       </Link>
 
       <h2 className="text-center">Create an account</h2>
@@ -161,6 +163,7 @@ const SignUp = () => {
         </Link>
       </div>
     </Form>
+    </div>
   );
 };
 

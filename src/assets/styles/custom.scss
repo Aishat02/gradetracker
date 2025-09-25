@@ -1,7 +1,6 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
-// Your custom color definitions
 $offcanvas-horizontal-width: 220px;
 $green: #38e078;
 $black: #212529;
@@ -23,5 +22,6 @@ $custom-colors: (
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
 
 @import "bootstrap/scss/bootstrap";

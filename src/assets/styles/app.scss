@@ -36,9 +36,9 @@ header img {
 }
 form.login,
 form.signup {
+  min-width: 320px;
+  width: 90%;
   max-width: 500px;
-  width: 420px;
-  margin: 2em auto;
   box-shadow: 0 0px 5px gray;
 }
 caption {
